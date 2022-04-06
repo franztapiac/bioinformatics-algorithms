@@ -13,8 +13,10 @@ Functions
 
 
 # Count appearances of kmer in text
-def patternCount(text, kmer):
+def kmerCount(text, kmer):
     count = 0
+    # text 0 to len(text) - 1
+    # last k-mer of Text begins at position |Text| − k
     for i in range(len(text)-len(kmer)):
         if text[i:i+len(kmer)] == kmer:
             count += 1
@@ -29,6 +31,9 @@ def hasEOLchar(text):
         return False
 
 
+'''
+Main
+'''
 seq_file = open("1_2_dataset_2_6.txt", 'r')  # Contains sequence and pattern to search
 
 # # Read all data as one string
@@ -49,6 +54,6 @@ pattern_seq = seq_data_2[1][:-1]
 
 seq_file.close()
 
-count_pattern_in_seq = patternCount(seq, pattern_seq)
+count_pattern_in_seq = kmerCount(seq, pattern_seq)
 print(count_pattern_in_seq)
 
