@@ -17,8 +17,8 @@ def kmerCount(text, kmer):
     count = 0
     # text 0 to len(text) - 1
     # last k-mer of Text begins at position |Text| − k
-    for i in range(len(text)-len(kmer)):
-        if text[i:i+len(kmer)] == kmer:
+    for i in range(len(text)-len(kmer)):                    # |text| - k checks
+        if text[i:i+len(kmer)] == kmer:                     #   k checks
             count += 1
     return count
 
